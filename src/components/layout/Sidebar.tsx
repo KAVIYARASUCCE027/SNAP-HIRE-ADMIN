@@ -9,11 +9,13 @@ import {
   Calendar,
   Settings,
   LogOut,
-  Briefcase
+  Briefcase,
+  UploadCloud
 } from 'lucide-react';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { name: 'Upload Resumes', href: '/upload-resumes', icon: UploadCloud },
   { name: 'Post Project', href: '/post-project', icon: FileText },
   { name: 'Applications', href: '/applications', icon: Users },
   { name: 'Student Matches', href: '/matches', icon: Briefcase },

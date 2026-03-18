@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import PostProject from './pages/PostProject';
 import Applications from './pages/Applications';
 import StudentMatches from './pages/StudentMatches';
+import UploadResumes from './pages/UploadResumes';
 
 function App() {
   const isAuthenticated = true; // Mock authentication
@@ -28,6 +29,7 @@ function App() {
         <div className="flex-1 flex flex-col">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/upload-resumes" element={<UploadResumes />} />
             <Route path="/post-project" element={<PostProject />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/matches" element={<StudentMatches />} />
