@@ -1,0 +1,11 @@
+for python - cd e:\ED\project-admin\nlp-service
+.\venv\Scripts\uvicorn.exe main:app --port 8000
+
+for backend - cd e:\ED\project-admin\backend
+node server.js
+
+for frontend - cd e:\ED\project-admin\project
+npm run dev
+
+
+for terminate - 

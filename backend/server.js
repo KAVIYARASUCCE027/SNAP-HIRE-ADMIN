@@ -14,8 +14,18 @@ app.use(express.json());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB Connected successfully.'))
-  .catch(err => console.error('MongoDB Connection Error:', err));
+  .then(() => {
+    console.log('MongoDB Connected successfully.');
+    // Start Server after successful DB connection
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error('MongoDB Connection Error:', err);
+    // Exit process with failure code if DB doesn't connect
+    process.exit(1);
+  });
 
 /**
  * Basic NLP Matching Algorithm
@@ -155,7 +165,4 @@ app.get('/api/resumes', async (req, res) => {
   }
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Server listening is now handled inside the MongoDB connection success callback
